@@ -1,0 +1,14 @@
+clc;
+x=[1 2 3 4];
+h=[2,3,4,1];
+x1=length(x);
+h1=length(h);
+n=max(x,h);
+x=[x,Zeros(1,n-x1)];
+h=[h,Zeros(1,n-h1)];
+xd=fft(x,n);
+hd=fft(h,n);
+y=xd.*hd;
+yd=ifft(y,n);
+disp(y);
+stem(y);
